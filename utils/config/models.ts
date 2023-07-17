@@ -27,12 +27,13 @@ export const Models: Array<IModel> = [
   {
     id: 'validator-endpoint',
     name: 'Validator Endpoint',
-    endpoint: 'https://validator-api.fabhed.dev/chat',
-    requestBuilder: (secret, data) => {
+    endpoint: 'https://d509-65-108-32-175.ngrok-free.app/chat',
+    requestBuilder: (data) => {
       return {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${secret}`,
+          'Authorization': 'Bearer O8yseMhTnZxdHJgnLV-aHsAzZG1CdL9UBCAmLZJlUk5FpGQVYuXZMkqxW95BWoRb',
+          'Endpoint-Version': '2023-05-19'
         },
         method: 'POST',
         body: JSON.stringify({ messages: data, top_n: 1 }),

@@ -15,14 +15,13 @@ export const ValidatorEndpointConversation = async (
   messages: Message[],
   systemPrompt: string,
 ) => {
-  const url = `${VALIDATOR_ENDPOINT_API_HOST}/chat`;
+  const url = 'https://d509-65-108-32-175.ngrok-free.app/chat' ;
 
   const res = await fetch(url, {
-    headers: {
+      headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${
-        key ? key : process.env.VALIDATOR_ENDPOINT_API_KEY
-      }`,
+      'Authorization' : 'Bearer O8yseMhTnZxdHJgnLV-aHsAzZG1CdL9UBCAmLZJlUk5FpGQVYuXZMkqxW95BWoRb',
+      'Endpoint-Version' : '2023-05-19'
     },
     method: 'POST',
     body: JSON.stringify({
@@ -41,7 +40,7 @@ export const ValidatorEndpointConversation = async (
 
   if (res.status !== 200) {
     throw new ValidatorEndpointError(
-      `Validator Endpoint Error: ${json.detail}`,
+      Validator Endpoint Error: ${json.detail},
     );
   }
 
